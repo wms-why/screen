@@ -17,7 +17,6 @@ export default function HomeIndex() {
     value: "#ffffff",
   });
   const [text, setText] = useState("");
-  const [isPreview, setIsPreview] = useState(false);
 
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
@@ -54,6 +53,39 @@ export default function HomeIndex() {
             </button>
           </div>
         </section>
+
+        {/* 工具栏 */}
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="space-y-6">
+              <BackgroundSelector
+                background={background}
+                setBackground={setBackground}
+              />
+              <TextEditor text={text} setText={setText} />
+            </div>
+            <div className="flex items-center justify-center">
+              <div
+                className="w-full aspect-video flex items-center justify-center border rounded-lg"
+                style={{
+                  backgroundColor:
+                    background.type === "color" ? background.value : undefined,
+                  backgroundImage:
+                    background.type === "image"
+                      ? `url(${background.value})`
+                      : undefined,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              >
+                {text && (
+                  <p className="text-2xl font-bold text-center p-4">{text}</p>
+                )}
+              </div>
+            </div>
+          </div>
+          <PreviewToolbar background={background} text={text} />
+        </div>
 
         {/* Features Section */}
         <section className="py-16 bg-white">
@@ -130,67 +162,6 @@ export default function HomeIndex() {
             </div>
           </div>
         </section>
-
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
-          {isPreview ? (
-            <div className="flex items-center justify-center h-[80vh]">
-              <div
-                className="w-full h-full flex items-center justify-center"
-                style={{
-                  backgroundColor:
-                    background.type === "color" ? background.value : undefined,
-                  backgroundImage:
-                    background.type === "image"
-                      ? `url(${background.value})`
-                      : undefined,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-              >
-                {text && (
-                  <p className="text-4xl font-bold text-center p-8">{text}</p>
-                )}
-              </div>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div className="space-y-6">
-                <BackgroundSelector
-                  background={background}
-                  setBackground={setBackground}
-                />
-                <TextEditor text={text} setText={setText} />
-              </div>
-              <div className="flex items-center justify-center">
-                <div
-                  className="w-full aspect-video flex items-center justify-center border rounded-lg"
-                  style={{
-                    backgroundColor:
-                      background.type === "color"
-                        ? background.value
-                        : undefined,
-                    backgroundImage:
-                      background.type === "image"
-                        ? `url(${background.value})`
-                        : undefined,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
-                >
-                  {text && (
-                    <p className="text-2xl font-bold text-center p-4">{text}</p>
-                  )}
-                </div>
-              </div>
-            </div>
-          )}
-          <PreviewToolbar
-            isPreview={isPreview}
-            setIsPreview={setIsPreview}
-            background={background}
-            text={text}
-          />
-        </div>
       </main>
 
       {/* Footer */}

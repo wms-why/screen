@@ -1,5 +1,4 @@
-"use client";
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 
 export default function DownloadButton({
   background,
