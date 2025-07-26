@@ -21,6 +21,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const host = process.env.NEXT_PUBLIC_HOST;
 export default async function RootLayout({
   children,
   params,
@@ -50,32 +51,13 @@ export default async function RootLayout({
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
-        <link
-          rel="canonical"
-          href={`https://next-app-i18n-starter.vercel.app`}
-        />
-        <link
-          rel="alternate"
-          hrefLang="x-default"
-          href="https://next-app-i18n-starter.vercel.app"
-        />
-        <link
-          rel="alternate"
-          hrefLang="en"
-          href="https://next-app-i18n-starter.vercel.app/en"
-        />
-        <link
-          rel="alternate"
-          hrefLang="ar"
-          href="https://next-app-i18n-starter.vercel.app/ar"
-        />
-        <link
-          rel="alternate"
-          hrefLang="zh"
-          href="https://next-app-i18n-starter.vercel.app/zh"
-        />
-        <meta name="keywords" content={t("keywords")} />
-        <meta name="author" content="Sovers Tonmoy Pandey" />
+        <link rel="canonical" href={`${host}`} />
+        <link rel="alternate" hrefLang="x-default" href={`${host}`} />
+        <link rel="alternate" hrefLang="en" href={`${host}/en`} />
+        <link rel="alternate" hrefLang="ar" href={`${host}/ar`} />
+        <link rel="alternate" hrefLang="zh" href={`${host}/zh`} />
+        {/* <meta name="keywords" content={t("keywords")} /> */}
+        <meta name="author" content="ymk" />
         <meta name="robots" content="index, follow" />
         <script
           {...jsonLdScriptProps<WebSite>({
@@ -83,7 +65,7 @@ export default async function RootLayout({
             "@type": "WebSite",
             name: t("title"),
             description: t("description"),
-            url: "https://next-app-i18n-starter.vercel.app",
+            url: host,
             inLanguage: locale,
           })}
         />
@@ -124,18 +106,18 @@ export async function generateMetadata({
   return {
     title: t("title"),
     description: t("description"),
-    keywords: t("keywords"),
-    other: {
-      "google-site-verification": "sVYBYfSJfXdBca3QoqsZtD6lsWVH6sk02RCH4YAbcm8",
-    },
+    // keywords: t("keywords"),
+    // other: {
+    //   "google-site-verification": "sVYBYfSJfXdBca3QoqsZtD6lsWVH6sk02RCH4YAbcm8",
+    // },
     openGraph: {
       title: t("title"),
       description: t("description"),
-      url: `https://next-app-i18n-starter.vercel.app`,
-      siteName: "Next.js i18n Template",
+      url: host,
+      siteName: "screen custom",
       images: [
         {
-          url: "https://next-app-i18n-starter.vercel.app/og-image.png",
+          url: `${host}/og-image.png`,
           width: 1200,
           height: 630,
           alt: t("title"),
@@ -148,17 +130,17 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: t("title"),
       description: t("description"),
-      images: ["https://next-app-i18n-starter.vercel.app/og-image.png"],
+      images: [`${host}/og-image.png`],
       creator: "@s0ver5",
     },
     alternates: {
-      canonical: `https://next-app-i18n-starter.vercel.app`,
+      canonical: `${host}`,
       languages: {
-        en: "https://next-app-i18n-starter.vercel.app/en",
-        ar: "https://next-app-i18n-starter.vercel.app/ar",
-        zh: "https://next-app-i18n-starter.vercel.app/zh",
-        es: "https://next-app-i18n-starter.vercel.app/es",
-        ja: "https://next-app-i18n-starter.vercel.app/jp",
+        en: `${host}/en`,
+        ar: `${host}/ar`,
+        zh: `${host}/zh`,
+        es: `${host}/es`,
+        ja: `${host}/jp`,
       },
     },
     robots: {

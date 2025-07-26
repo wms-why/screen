@@ -1,43 +1,49 @@
 {
   "Index": {
-    "boilerplateName": "Plantilla i18n de Next.js",
-    "title": "Plantilla Next 15 con i18n y Shadcn UI",
-    "description": "Un potente punto de partida para tu próxima aplicación web multilingüe y accesible.",
-    "cloneRepository": "Clonar repositorio",
-    "leaveStar": "Dejar una estrella",
-    "howToUse": "Cómo usar",
-    "gettingStarted": "Empezar",
-    "installation": "Instalación",
-    "howToContribute": "Cómo contribuir",
-    "omitrtlUsage": "Omitir uso de RTL",
-    "OmitRTLInstruction": "Para usar OmitRTL, simplemente envuelve el componente para el que deseas omitir la compatibilidad con RTL con el componente OmitRTL.",
-    "contribute": "Contribuir",
-    "installationSteps": {
-      "cloneRepository": "Clonar el repositorio:",
-      "installDependencies": "Instalar dependencias:",
-      "startDevServer": "Iniciar el servidor de desarrollo:"
-    },
-    "contributeSteps": {
-      "fork": "Bifurcar el repositorio",
-      "createBranch": "Crear una rama nueva:",
-      "commit": "Confirmar tus cambios:",
-      "push": "Subir a la rama:",
-      "pullRequest": "Crear una nueva solicitud de extracción"
-    },
-    "error": {
-      "server": "Error interno del servidor",
-      "sorry": "Lo sentimos, encontramos un problema inesperado en nuestro servidor.",
-      "tryAgain": "Inténtalo de nuevo más tarde.",
-      "returnHome": "Volver a la página principal"
-    }
-  },
-  "Footer": {
-    "copyright": "© 2025 Plantilla i18n de Next.js. Código abierto bajo licencia MIT.",
-    "githubLink": "GitHub"
+    "appName": "Diseñador de Pantallas",
+    "backgroundSettings": "Configuración de Fondo",
+    "colorBackground": "Color Sólido",
+    "imageBackground": "Fondo de Imagen",
+    "textEditor": "Editor de Texto",
+    "defaultText": "Ingrese su texto",
+    "fontSize": "Tamaño de Fuente: {size}px",
+    "textColor": "Color de Texto",
+    "preview": "Vista Previa Completa",
+    "backToEdit": "Volver a Editar",
+    "downloadSize": "Tamaño de Descarga",
+    "downloadBackground": "Descargar Fondo",
+    "downloadAlert": "Descargar imagen de fondo {size}",
+    "heroTitle": "Crea Diseños de Pantalla Impresionantes",
+    "heroSubtitle": "Diseña y personaliza fondos hermosos para tus dispositivos",
+    "getStarted": "Comenzar Ahora",
+    "featuresTitle": "Características Principales",
+    "feature1Title": "Personalización Fácil",
+    "feature1Desc": "Herramientas intuitivas para crear fondos perfectos",
+    "feature2Title": "Múltiples Opciones",
+    "feature2Desc": "Elige entre colores o sube tus propias imágenes",
+    "feature3Title": "Vista Previa en Tiempo Real",
+    "feature3Desc": "Ve los cambios al instante mientras diseñas",
+    "testimonialsTitle": "Lo que Dicen Nuestros Usuarios",
+    "testimonial1Text": "¡Esta herramienta me ahorró horas de trabajo!",
+    "testimonial1Author": "Juan D., Diseñador",
+    "testimonial2Text": "La forma más fácil de crear fondos profesionales",
+    "testimonial2Author": "María S., Desarrolladora",
+    "ctaTitle": "¿Listo para Crear?",
+    "ctaSubtitle": "Comienza a diseñar tu fondo perfecto hoy",
+    "ctaButton": "Comenzar a Diseñar",
+    "faqTitle": "Preguntas Frecuentes",
+    "faqQuestion1": "¿Cómo descargo mi diseño?",
+    "faqAnswer1": "Haz clic en el botón de descarga después de terminar tu diseño",
+    "faqQuestion2": "¿Puedo usar mis propias imágenes?",
+    "faqAnswer2": "Sí, puedes subir cualquier imagen como fondo",
+    "faqQuestion3": "¿Esta herramienta es gratuita?",
+    "faqAnswer3": "Sí, es completamente gratuita sin cargos ocultos"
   },
   "Metadata": {
-    "title": "Plantilla i18n de Next.js - Plantilla de inicio multilingüe",
-    "description": "Kit de inicio para internacionalización (i18n) de Next.js con soporte para árabe, chino, inglés, español y japonés. Incluye shadcn UI, cambio de tema y soporte para RTL.",
-    "keywords": "Next.js, i18n, internacionalización, árabe, chino, inglés, español, japonés, multilingüe, plantilla, plantilla de inicio, shadcn UI, soporte RTL"
+    "title": "Diseñador de Pantallas",
+    "description": "Herramienta para diseñar fondos de pantalla personalizados"
+  },
+  "Footer": {
+    "copyright": "© {year} Diseñador de Pantallas. Todos los derechos reservados."
   }
 }

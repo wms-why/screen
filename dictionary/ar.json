@@ -1,43 +1,49 @@
 {
   "Index": {
-    "boilerplateName": "قالب i18n لـ Next.js",
-    "title": "قالب Next 15 مع i18n و Shadcn UI",
-    "description": "نقطة انطلاق قوية لتطبيق الويب متعدد اللغات وسهل الوصول.",
-    "cloneRepository": "استنساخ المستودع",
-    "leaveStar": "اترك نجمة",
-    "howToUse": "كيفية الاستخدام",
-    "gettingStarted": "البدء",
-    "installation": "التثبيت",
-    "howToContribute": "كيفية المساهمة",
-    "omitrtlUsage": "استخدام OmitRTL",
-    "OmitRTLInstruction": "لاستخدام OmitRTL، قم ببساطة بتغليف العنصر الذي تريد استبعاد دعم RTL له بعنصر OmitRTL.",
-    "contribute": "المساهمة",
-    "installationSteps": {
-      "cloneRepository": "استنساخ المستودع:",
-      "installDependencies": "تثبيت الاعتمادات:",
-      "startDevServer": "بدء خادم التطوير:"
-    },
-    "contributeSteps": {
-      "fork": "قم بتقسيم المستودع",
-      "createBranch": "إنشاء فرع جديد:",
-      "commit": "تأكيد التغييرات:",
-      "push": "دفع إلى الفرع:",
-      "pullRequest": "إنشاء طلب سحب جديد"
-    },
-    "error": {
-      "server": "خطأ داخلي في الخادم",
-      "sorry": "عذرًا، واجهنا مشكلة غير متوقعة على خادمنا.",
-      "tryAgain": " حاول مرة أخرى في وقت لاحق.",
-      "returnHome": "العودة إلى الصفحة الرئيسية"
-    }
-  },
-  "Footer": {
-    "copyright": "© 2025 قالب i18n لـ Next.js. مفتوح المصدر تحت رخصة MIT.",
-    "githubLink": "GitHub"
+    "appName": "مصمم الشاشة",
+    "backgroundSettings": "إعدادات الخلفية",
+    "colorBackground": "لون خالص",
+    "imageBackground": "خلفية الصورة",
+    "textEditor": "محرر النص",
+    "defaultText": "أدخل النص الخاص بك",
+    "fontSize": "حجم الخط: {size}px",
+    "textColor": "لون النص",
+    "preview": "معاينة كاملة الشاشة",
+    "backToEdit": "العودة إلى التحرير",
+    "downloadSize": "حجم التنزيل",
+    "downloadBackground": "تنزيل الخلفية",
+    "downloadAlert": "تنزيل صورة خلفية {size}",
+    "heroTitle": "إنشاء تصاميم شاشة مذهلة",
+    "heroSubtitle": "تصميم وتخصيص خلفيات جميلة لأجهزتك",
+    "getStarted": "ابدأ الآن",
+    "featuresTitle": "الميزات الرئيسية",
+    "feature1Title": "تخصيص سهل",
+    "feature1Desc": "أدوات بديهية لإنشاء خلفيات مثالية",
+    "feature2Title": "خيارات متعددة",
+    "feature2Desc": "اختر من الألوان أو قم بتحميل صورك الخاصة",
+    "feature3Title": "معاينة فورية",
+    "feature3Desc": "رؤية التغييرات على الفور أثناء التصميم",
+    "testimonialsTitle": "ما يقوله مستخدمونا",
+    "testimonial1Text": "وفرت هذه الأداة ساعات من العمل!",
+    "testimonial1Author": "جون د.، مصمم",
+    "testimonial2Text": "أسهل طريقة لإنشاء خلفيات احترافية",
+    "testimonial2Author": "سارة م.، مطورة",
+    "ctaTitle": "هل أنت مستعد للبدء؟",
+    "ctaSubtitle": "ابدأ تصميم خلفيتك المثالية اليوم",
+    "ctaButton": "ابدأ التصميم",
+    "faqTitle": "الأسئلة الشائعة",
+    "faqQuestion1": "كيف يمكنني تنزيل تصميمي؟",
+    "faqAnswer1": "انقر على زر التنزيل بعد الانتهاء من التصميم",
+    "faqQuestion2": "هل يمكنني استخدام صوري الخاصة؟",
+    "faqAnswer2": "نعم، يمكنك تحميل أي صورة كخلفية",
+    "faqQuestion3": "هل هذه الأداة مجانية؟",
+    "faqAnswer3": "نعم، مجانية تمامًا بدون رسوم خفية"
   },
   "Metadata": {
-    "title": "قالب Next.js للتدويل - نقطة بدء متعددة اللغات",
-    "description": "قالب Next.js للتدويل (i18n) مع دعم العربية، الصينية، الإنجليزية، الإسبانية، واليابانية. يتضمن واجهة shadcn، تبديل السمات ودعم RTL.",
-    "keywords": "Next.js, i18n, تدويل, عربي, صيني, إنجليزي, إسباني, ياباني, متعدد اللغات, قالب, واجهة shadcn, دعم RTL"
+    "title": "مصمم الشاشة",
+    "description": "أداة لتصميم خلفيات الشاشة المخصصة"
+  },
+  "Footer": {
+    "copyright": "© {year} مصمم الشاشة. جميع الحقوق محفوظة."
   }
 }
