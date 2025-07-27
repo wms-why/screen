@@ -1,16 +1,9 @@
 "use client";
-import BackgroundSelector, {
-  Background,
-  BackgroundType,
-} from "./common/BackgroundSelector";
-import PreviewToolbar from "./common/PreviewToolbar";
-import TextEditor, { TextProp } from "./common/TextEditor";
+import BackgroundSelector, { Background } from "../common/BackgroundSelector";
+import PreviewToolbar from "../common/PreviewToolbar";
+import TextEditor, { TextProp } from "../common/TextEditor";
 import { useState } from "react";
 
-/**
- * 全特性工具栏
- * @returns
- */
 export default function Page() {
   const [background, setBackground] = useState<Background>({
     type: "color",
@@ -18,8 +11,8 @@ export default function Page() {
     image: null,
   });
   const [text, setText] = useState<TextProp>({
-    text: "default",
-    color: "black",
+    text: "",
+    color: "#000000",
   });
 
   return (

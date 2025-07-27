@@ -10,6 +10,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "../globals.css";
+const host = process.env.NEXT_PUBLIC_HOST;
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,7 +22,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const host = process.env.NEXT_PUBLIC_HOST;
 export default async function RootLayout({
   children,
   params,
@@ -51,11 +51,6 @@ export default async function RootLayout({
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
-        <link rel="canonical" href={`${host}`} />
-        <link rel="alternate" hrefLang="x-default" href={`${host}`} />
-        <link rel="alternate" hrefLang="en" href={`${host}/en`} />
-        <link rel="alternate" hrefLang="ar" href={`${host}/ar`} />
-        <link rel="alternate" hrefLang="zh" href={`${host}/zh`} />
         {/* <meta name="keywords" content={t("keywords")} /> */}
         <meta name="author" content="ymk" />
         <meta name="robots" content="index, follow" />
@@ -87,72 +82,4 @@ export default async function RootLayout({
       </body>
     </html>
   );
-}
-
-const locales = ["en", "ar", "zh", "es", "jp"] as const;
-
-export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
-}
-
-export async function generateMetadata({
-  params,
-}: {
-  params: { locale: string };
-}): Promise<Metadata> {
-  const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "Metadata" });
-
-  return {
-    title: t("title"),
-    description: t("description"),
-    // keywords: t("keywords"),
-    // other: {
-    //   "google-site-verification": "sVYBYfSJfXdBca3QoqsZtD6lsWVH6sk02RCH4YAbcm8",
-    // },
-    openGraph: {
-      title: t("title"),
-      description: t("description"),
-      url: host,
-      siteName: "screen customization",
-      images: [
-        {
-          url: `${host}/og-image.png`,
-          width: 1200,
-          height: 630,
-          alt: t("title"),
-        },
-      ],
-      locale: locale,
-      type: "website",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: t("title"),
-      description: t("description"),
-      images: [`${host}/og-image.png`],
-      creator: "@s0ver5",
-    },
-    alternates: {
-      canonical: `${host}`,
-      languages: {
-        en: `${host}/en`,
-        ar: `${host}/ar`,
-        zh: `${host}/zh`,
-        es: `${host}/es`,
-        ja: `${host}/jp`,
-      },
-    },
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        "max-video-preview": -1,
-        "max-image-preview": "large",
-        "max-snippet": -1,
-      },
-    },
-  };
 }

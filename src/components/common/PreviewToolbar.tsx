@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { useTranslations } from "next-intl";
 import { Eye, Download } from "lucide-react";
 import { Background } from "./BackgroundSelector";
@@ -54,21 +54,20 @@ export default function PreviewToolbar({
     }
   };
 
-  const drawText = (
-    ctx: CanvasRenderingContext2D,
-    width: number,
-    height: number
-  ) => {
-    if (!text) return;
+  const drawText = useCallback(
+    (ctx: CanvasRenderingContext2D, width: number, height: number) => {
+      if (!text) return;
 
-    ctx.fillStyle = text.color;
-    ctx.font = "48px Arial";
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-    ctx.fillText(text.text, width / 2, height / 2);
-  };
+      ctx.fillStyle = text.color;
+      ctx.font = "48px Arial";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillText(text.text, width / 2, height / 2);
+    },
+    [text]
+  );
 
-  const handleFullScreen = () => {
+  const handleFullScreen = useCallback(() => {
     if (!canvasRef.current) return;
 
     const canvas = canvasRef.current;
@@ -95,8 +94,6 @@ export default function PreviewToolbar({
         drawText(ctx, width, height);
       };
     }
-
-    // 显示canvas并进入全屏
     canvas.classList.remove("hidden");
     canvas.setAttribute("data-fullscreen", "true");
     canvas.style.position = "fixed";
@@ -119,16 +116,30 @@ export default function PreviewToolbar({
       }
     };
     document.addEventListener("fullscreenchange", onFullscreenChange);
-  };
+  }, [canvasRef, background, drawText]);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "F11") {
+        e.preventDefault();
+        handleFullScreen();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [handleFullScreen]);
 
   return (
-    <div className="flex flex-wrap items-center justify-between gap-6 p-4 bg-background/80 backdrop-blur-sm rounded-lg border shadow-sm mt-6 transition-all">
+    <div className="flex flex-wrap items-center justify-between gap-4 p-4 bg-background/80 backdrop-blur-sm rounded-lg border shadow-sm mt-6 transition-all">
       <button
         onClick={() => handleFullScreen()}
-        className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors shadow hover:shadow-md"
+        className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors shadow hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
       >
         <Eye className="w-4 h-4" />
-        {t("previewFullscreen")}
+        {t("previewFullscreen")} (F11)
       </button>
 
       <div className="flex items-center gap-4">
@@ -149,7 +160,7 @@ export default function PreviewToolbar({
         </div>
         <button
           onClick={handleDownload}
-          className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors shadow hover:shadow-md"
+          className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors shadow hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
         >
           <Download className="w-4 h-4" />
           {t("downloadBackground")}

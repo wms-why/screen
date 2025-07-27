@@ -3,6 +3,7 @@
     "appName": "Diseñador de Pantallas",
     "heroTitle": "Crea Diseños de Pantalla Impresionantes",
     "heroSubtitle": "Diseña y personaliza fondos hermosos para tus dispositivos",
+    "toolTitle": "Herramienta de Diseño",
     "getStarted": "Comenzar Ahora",
     "featuresTitle": "Características Principales",
     "feature1Title": "Personalización Fácil",
@@ -50,5 +51,53 @@
   },
   "Footer": {
     "copyright": "© {year} Diseñador de Pantallas. Todos los derechos reservados."
+  },
+  "BlackScreen": {
+    "toolTitle": "Herramienta de Diseño de Pantalla Negra",
+    "seoTitle": "Generador de Pantalla Negra - Crea Fondos Negros Puros",
+    "seoDescription": "Genera pantallas negras puras para pantallas OLED, pruebas de modo oscuro y ahorro de energía. Personaliza y descarga fondos negros de alta calidad.",
+    "heroTitle": "Generador de Pantalla Negra Pura",
+    "heroSubtitle": "Crea fondos negros perfectos para tus dispositivos",
+    "feature1Title": "Amigable con OLED",
+    "feature1Desc": "El negro verdadero ahorra energía en pantallas OLED",
+    "feature2Title": "Pruebas de Modo Oscuro",
+    "feature2Desc": "Perfecto para probar interfaces en modo oscuro",
+    "feature3Title": "Alta Calidad",
+    "feature3Desc": "Fondos negros puros y nítidos en cualquier resolución",
+    "ctaTitle": "¿Listo para Usar?",
+    "ctaSubtitle": "Comienza a usar tu fondo negro perfecto ahora",
+    "ctaButton": "Usar Pantalla Negra"
+  },
+  "WhiteScreen": {
+    "toolTitle": "Herramienta de Diseño de Pantalla Blanca",
+    "seoTitle": "Generador de Pantalla Blanca - Crear Fondos Blancos Puros",
+    "seoDescription": "Genera pantallas blancas puras para pruebas de pantalla, pruebas de modo claro y calibración. Personaliza y descarga fondos blancos de alta calidad.",
+    "heroTitle": "Generador de Pantalla Blanca Pura",
+    "heroSubtitle": "Crea fondos blancos perfectos para tus dispositivos",
+    "feature1Title": "Pruebas de Pantalla",
+    "feature1Desc": "El blanco puro ayuda a detectar píxeles muertos y uniformidad de pantalla",
+    "feature2Title": "Pruebas de Modo Claro",
+    "feature2Desc": "Perfecto para probar interfaces en modo claro",
+    "feature3Title": "Alta Calidad",
+    "feature3Desc": "Fondos blancos puros y nítidos en cualquier resolución",
+    "ctaTitle": "¿Listo para Usar?",
+    "ctaSubtitle": "Comienza a usar tu fondo blanco perfecto ahora",
+    "ctaButton": "Usar Pantalla Blanca"
+  },
+  "DoNotWriteOnThisPage": {
+    "seoTitle": "Generador 'No Escribas en Esta Página' - Crear Fondos Personalizados",
+    "seoDescription": "Genera fondos 'No Escribas en Esta Página' para cuadernos, pizarras y más. Personaliza texto y colores, luego descarga imágenes de alta calidad.",
+    "toolTitle": "Generador 'No Escribas en Esta Página'",
+    "heroTitle": "Crea Fondos Personalizados 'No Escribas en Esta Página'",
+    "heroSubtitle": "Diseña fondos perfectos para tus cuadernos, pizarras y dispositivos",
+    "feature1Title": "Texto Personalizable",
+    "feature1Desc": "Cambia el texto, fuente y color según tus necesidades",
+    "feature2Title": "Opciones de Fondo",
+    "feature2Desc": "Elige entre colores o sube tu propia imagen de fondo",
+    "feature3Title": "Alta Calidad",
+    "feature3Desc": "Descarga imágenes nítidas y de alta resolución para cualquier uso",
+    "ctaTitle": "¿Listo para Crear?",
+    "ctaSubtitle": "Comienza a diseñar tu fondo personalizado ahora",
+    "ctaButton": "Crear Fondo"
   }
 }

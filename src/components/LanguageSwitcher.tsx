@@ -10,6 +10,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
+import { Locales } from "@/i18n/config";
 
 const LanguageSwitcher = () => {
   const router = useRouter();
@@ -25,7 +26,7 @@ const LanguageSwitcher = () => {
     setCurrentLanguage(savedLanguage);
 
     const urlLanguage = pathname.split("/")[1];
-    if (["en", "ar", "zh", "es", "jp"].includes(urlLanguage)) {
+    if (Locales.includes(urlLanguage)) {
       setCurrentLanguage(urlLanguage);
     }
   }, [pathname]);
@@ -35,7 +36,7 @@ const LanguageSwitcher = () => {
     document.cookie = `NEXT_LOCALE=${newLanguage}; path=/;`;
 
     const segments = pathname.split("/");
-    if (["en", "ar", "zh", "es", "jp"].includes(segments[1])) {
+    if (Locales.includes(segments[1])) {
       segments[1] = newLanguage;
     } else {
       segments.splice(1, 0, newLanguage);

@@ -3,6 +3,7 @@
     "appName": "スクリーンデザイナー",
     "heroTitle": "素晴らしいスクリーンデザインを作成",
     "heroSubtitle": "デバイス用の美しい背景をデザインしてカスタマイズ",
+    "toolTitle": "デザインツール",
     "getStarted": "今すぐ始める",
     "featuresTitle": "主な機能",
     "feature1Title": "簡単カスタマイズ",
@@ -50,5 +51,53 @@
   },
   "Footer": {
     "copyright": "© {year} スクリーンデザイナー 無断複写・転載を禁じます"
+  },
+  "BlackScreen": {
+    "toolTitle": "黒画面デザインツール",
+    "seoTitle": "黒画面ジェネレーター - 純黒の背景を作成",
+    "seoDescription": "OLEDディスプレイ、ダークモードテスト、省エネ用の純黒画面を生成。高品質な黒背景をカスタマイズしてダウンロード。",
+    "heroTitle": "純黒画面ジェネレーター",
+    "heroSubtitle": "デバイス用の完璧な黒背景を作成",
+    "feature1Title": "OLED対応",
+    "feature1Desc": "純黒はOLEDディスプレイの電力を節約",
+    "feature2Title": "ダークモードテスト",
+    "feature2Desc": "ダークモードインターフェースのテストに最適",
+    "feature3Title": "高品質",
+    "feature3Desc": "あらゆる解像度で鮮明な純黒背景",
+    "ctaTitle": "使用する準備はできましたか？",
+    "ctaSubtitle": "完璧な黒背景を今すぐ使用開始",
+    "ctaButton": "黒画面を使用"
+  },
+  "WhiteScreen": {
+    "toolTitle": "白画面デザインツール",
+    "seoTitle": "白画面ジェネレーター - 純白の背景を作成",
+    "seoDescription": "ディスプレイテスト、ライトモードテスト、キャリブレーション用の純白画面を生成。高品質な白背景をカスタマイズしてダウンロード。",
+    "heroTitle": "純白画面ジェネレーター",
+    "heroSubtitle": "デバイス用の完璧な白背景を作成",
+    "feature1Title": "ディスプレイテスト",
+    "feature1Desc": "純白はデッドピクセルや画面の均一性を検出するのに役立ちます",
+    "feature2Title": "ライトモードテスト",
+    "feature2Desc": "ライトモードインターフェースのテストに最適",
+    "feature3Title": "高品質",
+    "feature3Desc": "あらゆる解像度で鮮明な純白背景",
+    "ctaTitle": "使用する準備はできましたか？",
+    "ctaSubtitle": "完璧な白背景を今すぐ使用開始",
+    "ctaButton": "白画面を使用"
+  },
+  "DoNotWriteOnThisPage": {
+    "seoTitle": "「このページに書かないで」ジェネレーター - カスタム背景を作成",
+    "seoDescription": "ノートやホワイトボード用の「このページに書かないで」背景を生成。テキストと色をカスタマイズし、高品質な画像をダウンロード。",
+    "toolTitle": "「このページに書かないで」ジェネレーター",
+    "heroTitle": "カスタム「このページに書かないで」背景を作成",
+    "heroSubtitle": "ノートやホワイトボード、デバイス用の完璧な背景をデザイン",
+    "feature1Title": "カスタマイズ可能なテキスト",
+    "feature1Desc": "テキスト、フォント、色をニーズに合わせて変更",
+    "feature2Title": "背景オプション",
+    "feature2Desc": "色から選択または独自の背景画像をアップロード",
+    "feature3Title": "高品質",
+    "feature3Desc": "あらゆる用途に鮮明な高解像度画像をダウンロード",
+    "ctaTitle": "作成の準備はできましたか？",
+    "ctaSubtitle": "カスタム背景のデザインを今すぐ開始",
+    "ctaButton": "背景を作成"
   }
 }
