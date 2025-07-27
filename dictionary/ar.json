@@ -1,18 +1,6 @@
 {
   "Index": {
     "appName": "مصمم الشاشة",
-    "backgroundSettings": "إعدادات الخلفية",
-    "colorBackground": "لون خالص",
-    "imageBackground": "خلفية الصورة",
-    "textEditor": "محرر النص",
-    "defaultText": "أدخل النص الخاص بك",
-    "fontSize": "حجم الخط: {size}px",
-    "textColor": "لون النص",
-    "preview": "معاينة كاملة الشاشة",
-    "backToEdit": "العودة إلى التحرير",
-    "downloadSize": "حجم التنزيل",
-    "downloadBackground": "تنزيل الخلفية",
-    "downloadAlert": "تنزيل صورة خلفية {size}",
     "heroTitle": "إنشاء تصاميم شاشة مذهلة",
     "heroSubtitle": "تصميم وتخصيص خلفيات جميلة لأجهزتك",
     "getStarted": "ابدأ الآن",
@@ -38,6 +26,23 @@
     "faqAnswer2": "نعم، يمكنك تحميل أي صورة كخلفية",
     "faqQuestion3": "هل هذه الأداة مجانية؟",
     "faqAnswer3": "نعم، مجانية تمامًا بدون رسوم خفية"
+  },
+  "BackgoundSetting": {
+    "title": "إعدادات الخلفية",
+    "colorOption": "لون",
+    "imageOption": "صورة",
+    "selectColor": "اختيار اللون",
+    "uploadImage": "رفع صورة"
+  },
+  "PreviewBar": {
+    "previewFullscreen": "معاينة كاملة الشاشة",
+    "downloadSize": "حجم التنزيل",
+    "downloadBackground": "تنزيل"
+  },
+  "TextEditor": {
+    "title": "محرر النص",
+    "defaultText": "الرجاء إدخال النص الخاص بك",
+    "textColor": "لون النص"
   },
   "Metadata": {
     "title": "مصمم الشاشة",

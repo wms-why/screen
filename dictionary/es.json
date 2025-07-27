@@ -1,18 +1,6 @@
 {
   "Index": {
     "appName": "Diseñador de Pantallas",
-    "backgroundSettings": "Configuración de Fondo",
-    "colorBackground": "Color Sólido",
-    "imageBackground": "Fondo de Imagen",
-    "textEditor": "Editor de Texto",
-    "defaultText": "Ingrese su texto",
-    "fontSize": "Tamaño de Fuente: {size}px",
-    "textColor": "Color de Texto",
-    "preview": "Vista Previa Completa",
-    "backToEdit": "Volver a Editar",
-    "downloadSize": "Tamaño de Descarga",
-    "downloadBackground": "Descargar Fondo",
-    "downloadAlert": "Descargar imagen de fondo {size}",
     "heroTitle": "Crea Diseños de Pantalla Impresionantes",
     "heroSubtitle": "Diseña y personaliza fondos hermosos para tus dispositivos",
     "getStarted": "Comenzar Ahora",
@@ -38,6 +26,23 @@
     "faqAnswer2": "Sí, puedes subir cualquier imagen como fondo",
     "faqQuestion3": "¿Esta herramienta es gratuita?",
     "faqAnswer3": "Sí, es completamente gratuita sin cargos ocultos"
+  },
+  "BackgoundSetting": {
+    "title": "Configuración de Fondo",
+    "colorOption": "Color",
+    "imageOption": "Imagen",
+    "selectColor": "elegir color",
+    "uploadImage": "subir imagen"
+  },
+  "PreviewBar": {
+    "previewFullscreen": "Vista Previa Completa",
+    "downloadSize": "Tamaño de Descarga",
+    "downloadBackground": "Descargar"
+  },
+  "TextEditor": {
+    "title": "Editor de Texto",
+    "defaultText": "por favor ingrese su texto",
+    "textColor": "Color de Texto"
   },
   "Metadata": {
     "title": "Diseñador de Pantallas",

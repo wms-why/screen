@@ -1,18 +1,6 @@
 {
   "Index": {
     "appName": "スクリーンデザイナー",
-    "backgroundSettings": "背景設定",
-    "colorBackground": "単色背景",
-    "imageBackground": "画像背景",
-    "textEditor": "テキストエディタ",
-    "defaultText": "テキストを入力してください",
-    "fontSize": "フォントサイズ: {size}px",
-    "textColor": "テキストカラー",
-    "preview": "フルスクリーンプレビュー",
-    "backToEdit": "編集に戻る",
-    "downloadSize": "ダウンロードサイズ",
-    "downloadBackground": "背景をダウンロード",
-    "downloadAlert": "{size}の背景画像をダウンロード",
     "heroTitle": "素晴らしいスクリーンデザインを作成",
     "heroSubtitle": "デバイス用の美しい背景をデザインしてカスタマイズ",
     "getStarted": "今すぐ始める",
@@ -38,6 +26,23 @@
     "faqAnswer2": "はい、任意の画像を背景としてアップロード可能",
     "faqQuestion3": "このツールは無料ですか？",
     "faqAnswer3": "はい、完全無料で隠れた費用はありません"
+  },
+  "BackgoundSetting": {
+    "title": "背景設定",
+    "colorOption": "色",
+    "imageOption": "画像",
+    "selectColor": "色を選択",
+    "uploadImage": "画像をアップロード"
+  },
+  "PreviewBar": {
+    "previewFullscreen": "フルスクリーンプレビュー",
+    "downloadSize": "ダウンロードサイズ",
+    "downloadBackground": "ダウンロード"
+  },
+  "TextEditor": {
+    "title": "テキストエディタ",
+    "defaultText": "テキストを入力してください",
+    "textColor": "テキストカラー"
   },
   "Metadata": {
     "title": "スクリーンデザイナー",

@@ -114,7 +114,7 @@ export async function generateMetadata({
       title: t("title"),
       description: t("description"),
       url: host,
-      siteName: "screen custom",
+      siteName: "screen customization",
       images: [
         {
           url: `${host}/og-image.png`,

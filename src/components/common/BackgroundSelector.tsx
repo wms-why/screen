@@ -1,0 +1,133 @@
+import { useTranslations } from "next-intl";
+export type BackgroundType = "color" | "image";
+export interface Background {
+  type: BackgroundType;
+  color: string;
+  image: string | null;
+}
+export default function BackgroundSelector({
+  background,
+  setBackground,
+}: {
+  background: Background;
+  setBackground: (bg: Background) => void;
+}) {
+  const t = useTranslations("BackgoundSetting");
+
+  const handleColorChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setBackground({
+      type: "color",
+      color: e.target.value,
+      image: background.image,
+    });
+  };
+
+  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        const result = event.target?.result as string;
+        setBackground({
+          type: "image",
+          image: result,
+          color: background.color,
+        });
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  return (
+    <div className="space-y-4 p-4 border rounded-lg">
+      <h3 className="font-medium text-lg">{t("title")}</h3>
+
+      <div className="flex flex-col gap-4">
+        <div className="flex gap-4 w-full">
+          <div className="flex-1">
+            <label className="flex items-center gap-3 p-3 border rounded-md hover:bg-accent cursor-pointer">
+              <input
+                type="radio"
+                id="color-bg"
+                name="background-type"
+                checked={background.type === "color"}
+                onChange={() =>
+                  setBackground({
+                    type: "color",
+                    color: background.color,
+                    image: background.image,
+                  })
+                }
+                className="h-4 w-4"
+              />
+              <span>{t("colorOption")}</span>
+            </label>
+          </div>
+
+          <div className="flex-1">
+            <label className="flex items-center gap-3 p-3 border rounded-md hover:bg-accent cursor-pointer">
+              <input
+                type="radio"
+                id="image-bg"
+                name="background-type"
+                checked={background.type === "image"}
+                onChange={() =>
+                  setBackground({
+                    type: "image",
+                    color: background.color,
+                    image: background.image,
+                  })
+                }
+                className="h-4 w-4"
+              />
+              <span>{t("imageOption")}</span>
+            </label>
+          </div>
+        </div>
+
+        <div className="w-full">
+          {background.type === "color" && (
+            <div className="flex flex-col gap-2">
+              <label
+                htmlFor="color-picker"
+                className="text-sm text-muted-foreground"
+              >
+                {t("selectColor")}
+              </label>
+              <input
+                type="color"
+                id="color-picker"
+                value={background.color}
+                onChange={handleColorChange}
+                className="w-full h-10 rounded-md cursor-pointer"
+              />
+            </div>
+          )}
+
+          {background.type === "image" && (
+            <div className="flex flex-col gap-2">
+              <label
+                htmlFor="file-upload"
+                className="text-sm text-muted-foreground"
+              >
+                {t("uploadImage")}
+              </label>
+              <input
+                type="file"
+                id="file-upload"
+                accept="image/*"
+                onChange={handleImageUpload}
+                className="block w-full text-sm text-muted-foreground
+                  file:mr-4 file:py-2 file:px-4
+                  file:rounded-md file:border-0
+                  file:text-sm file:font-semibold
+                  file:bg-primary file:text-primary-foreground
+                  hover:file:bg-primary/90"
+              />
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}

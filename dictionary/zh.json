@@ -1,18 +1,6 @@
 {
   "Index": {
     "appName": "屏幕背景设计工具",
-    "backgroundSettings": "背景设置",
-    "colorBackground": "纯色背景",
-    "imageBackground": "图片背景",
-    "textEditor": "文字编辑",
-    "defaultText": "输入您的文字",
-    "fontSize": "字体大小: {size}px",
-    "textColor": "文字颜色",
-    "preview": "全屏预览",
-    "backToEdit": "返回编辑",
-    "downloadSize": "下载尺寸",
-    "downloadBackground": "下载背景",
-    "downloadAlert": "下载 {size} 的背景图片",
     "heroTitle": "创建惊艳的屏幕设计",
     "heroSubtitle": "为您的设备设计和定制精美背景",
     "getStarted": "立即开始",
@@ -38,6 +26,23 @@
     "faqAnswer2": "可以，您可以上传任何图片作为背景",
     "faqQuestion3": "这个工具是免费的吗？",
     "faqAnswer3": "是的，完全免费且无隐藏收费"
+  },
+  "BackgoundSetting": {
+    "title": "背景设置",
+    "colorOption": "颜色背景",
+    "imageOption": "图片背景",
+    "selectColor": "选择颜色",
+    "uploadImage": "上传图片"
+  },
+  "PreviewBar": {
+    "previewFullscreen": "全屏预览",
+    "downloadSize": "下载尺寸",
+    "downloadBackground": "下载背景"
+  },
+  "TextEditor": {
+    "title": "文字编辑",
+    "defaultText": "输入您的文字",
+    "textColor": "文字颜色"
   },
   "Metadata": {
     "title": "屏幕背景设计工具",

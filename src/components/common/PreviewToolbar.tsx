@@ -2,15 +2,17 @@
 import { useState, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { Eye, Download } from "lucide-react";
+import { Background } from "./BackgroundSelector";
+import { TextProp } from "./TextEditor";
 
 export default function PreviewToolbar({
   background,
   text,
 }: {
-  background: { type: string; value: string };
-  text: string;
+  background: Background;
+  text: TextProp;
 }) {
-  const t = useTranslations("Index");
+  const t = useTranslations("PreviewBar");
   const [downloadSize, setDownloadSize] = useState("1920x1080");
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -27,12 +29,18 @@ export default function PreviewToolbar({
 
     // 绘制背景
     if (background.type === "color") {
-      ctx.fillStyle = background.value;
+      ctx.fillStyle = background.color;
       ctx.fillRect(0, 0, width, height);
       drawText(ctx, width, height);
+
+      // 创建下载链接
+      const link = document.createElement("a");
+      link.download = `background-${downloadSize}.png`;
+      link.href = canvas.toDataURL("image/png");
+      link.click();
     } else if (background.type === "image") {
       const img = new Image();
-      img.src = background.value;
+      img.src = background.image!;
       img.onload = () => {
         ctx.drawImage(img, 0, 0, width, height);
         drawText(ctx, width, height);
@@ -43,14 +51,6 @@ export default function PreviewToolbar({
         link.href = canvas.toDataURL("image/png");
         link.click();
       };
-    } else {
-      drawText(ctx, width, height);
-
-      // 创建下载链接
-      const link = document.createElement("a");
-      link.download = `background-${downloadSize}.png`;
-      link.href = canvas.toDataURL("image/png");
-      link.click();
     }
   };
 
@@ -61,11 +61,11 @@ export default function PreviewToolbar({
   ) => {
     if (!text) return;
 
-    ctx.fillStyle = "#000000";
+    ctx.fillStyle = text.color;
     ctx.font = "48px Arial";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
-    ctx.fillText(text, width / 2, height / 2);
+    ctx.fillText(text.text, width / 2, height / 2);
   };
 
   const handleFullScreen = () => {
@@ -84,34 +84,31 @@ export default function PreviewToolbar({
 
     // 绘制背景
     if (background.type === "color") {
-      ctx.fillStyle = background.value;
+      ctx.fillStyle = background.color;
       ctx.fillRect(0, 0, width, height);
       drawText(ctx, width, height);
     } else if (background.type === "image") {
       const img = new Image();
-      img.src = background.value;
+      img.src = background.image!;
       img.onload = () => {
         ctx.drawImage(img, 0, 0, width, height);
         drawText(ctx, width, height);
       };
-      img.onerror = () => {
-        drawText(ctx, width, height);
-      };
-    } else {
-      drawText(ctx, width, height);
     }
 
     // 显示canvas并进入全屏
     canvas.classList.remove("hidden");
+    canvas.setAttribute("data-fullscreen", "true");
     canvas.style.position = "fixed";
     canvas.style.top = "0";
     canvas.style.left = "0";
-    if (document.documentElement.requestFullscreen) {
-      document.documentElement.requestFullscreen();
-    } else if ((document.documentElement as any).webkitRequestFullscreen) {
-      (document.documentElement as any).webkitRequestFullscreen();
-    } else if ((document.documentElement as any).msRequestFullscreen) {
-      (document.documentElement as any).msRequestFullscreen();
+    canvas.style.zIndex = "9999";
+    if (canvas.requestFullscreen) {
+      canvas.requestFullscreen();
+    } else if ((canvas as any).webkitRequestFullscreen) {
+      (canvas as any).webkitRequestFullscreen();
+    } else if ((canvas as any).msRequestFullscreen) {
+      (canvas as any).msRequestFullscreen();
     }
 
     // 退出全屏时隐藏canvas
@@ -131,7 +128,7 @@ export default function PreviewToolbar({
         className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors shadow hover:shadow-md"
       >
         <Eye className="w-4 h-4" />
-        {t("preview")}
+        {t("previewFullscreen")}
       </button>
 
       <div className="flex items-center gap-4">

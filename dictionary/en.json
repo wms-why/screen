@@ -1,18 +1,6 @@
 {
   "Index": {
     "appName": "Screen Designer",
-    "backgroundSettings": "Background Settings",
-    "colorBackground": "Solid Color",
-    "imageBackground": "Image Background",
-    "textEditor": "Text Editor",
-    "defaultText": "Enter your text",
-    "fontSize": "Font size: {size}px",
-    "textColor": "Text Color",
-    "preview": "Fullscreen Preview",
-    "backToEdit": "Back to Edit",
-    "downloadSize": "Download Size",
-    "downloadBackground": "Download Background",
-    "downloadAlert": "Download {size} background image",
     "heroTitle": "Create Stunning Screen Designs",
     "heroSubtitle": "Design and customize beautiful backgrounds for your devices",
     "getStarted": "Get Started",
@@ -38,6 +26,23 @@
     "faqAnswer2": "Yes, you can upload any image as background",
     "faqQuestion3": "Is this tool free to use?",
     "faqAnswer3": "Yes, it's completely free with no hidden charges"
+  },
+  "BackgoundSetting": {
+    "title": "Background Setting",
+    "colorOption": "Color",
+    "imageOption": "Image",
+    "selectColor": "choose color",
+    "uploadImage": "upload image"
+  },
+  "PreviewBar": {
+    "previewFullscreen": "Fullscreen Preview",
+    "downloadSize": "Download Size",
+    "downloadBackground": "Download"
+  },
+  "TextEditor": {
+    "title": "Text Editor",
+    "defaultText": "please input your text",
+    "textColor": "Text Color"
   },
   "Metadata": {
     "title": "Screen Designer",

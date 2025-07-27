@@ -1,22 +1,12 @@
-"use client";
-import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 
 import { ModeToggle } from "../ModeToggle";
 import LanguageSwitcher from "../LanguageSwitcher";
-import BackgroundSelector from "./common/BackgroundSelector";
-import TextEditor from "./common/TextEditor";
-import PreviewToolbar from "./common/PreviewToolbar";
+import AllFunction from "../AllFunction";
 
 export default function HomeIndex() {
   const t = useTranslations("Index");
   const f = useTranslations("Footer");
-
-  const [background, setBackground] = useState({
-    type: "color",
-    value: "#ffffff",
-  });
-  const [text, setText] = useState("");
 
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
@@ -55,36 +45,8 @@ export default function HomeIndex() {
         </section>
 
         {/* 工具栏 */}
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="space-y-6">
-              <BackgroundSelector
-                background={background}
-                setBackground={setBackground}
-              />
-              <TextEditor text={text} setText={setText} />
-            </div>
-            <div className="flex items-center justify-center">
-              <div
-                className="w-full aspect-video flex items-center justify-center border rounded-lg"
-                style={{
-                  backgroundColor:
-                    background.type === "color" ? background.value : undefined,
-                  backgroundImage:
-                    background.type === "image"
-                      ? `url(${background.value})`
-                      : undefined,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-              >
-                {text && (
-                  <p className="text-2xl font-bold text-center p-4">{text}</p>
-                )}
-              </div>
-            </div>
-          </div>
-          <PreviewToolbar background={background} text={text} />
+        <div className=" mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
+          <AllFunction></AllFunction>
         </div>
 
         {/* Features Section */}
