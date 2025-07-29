@@ -1,46 +1,42 @@
 import { useTranslations } from "next-intl";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { ModeToggle } from "./ModeToggle";
+import { Box, Flex, Link, Strong, Text } from "@radix-ui/themes";
 
 export default function Header() {
   const t = useTranslations("Index");
   return (
-    <header className="w-full border-b backdrop-blur-sm bg-background/95 flex-shrink-0">
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="h-12 sm:h-14 lg:h-16 flex items-center justify-between">
-          <div>
-            <a className="font-bold text-base sm:text-lg lg:text-xl" href="/">
-              {t("appName")}
-            </a>
-          </div>
+    <header className="w-full py-2">
+      <Flex justify="center" gap="9" align="center">
+        <Box >
+          <a href="/" >
+            <Text size="6" color="iris"><Strong>{t("appName")}</Strong></Text>
+          </a>
+        </Box >
 
-          <nav className="flex items-center gap-2 sm:gap-3 lg:gap-4">
-            <a
-              href="/black-screen"
-              className="px-2 py-1 text-sm hover:text-primary flex items-center "
-            >
-              Black Screen
-            </a>
-            <a
-              href="/white-screen"
-              className="px-2 py-1 text-sm hover:text-primary flex items-center"
-            >
-              White Screen
-            </a>
-            <a
-              href="/do-not-write-on-this-page"
-              className="text-sm text-muted-foreground hover:text-primary"
-            >
-              Do Not Write On This Page
-            </a>
-          </nav>
+        <Flex gap={"4"} justify={"between"} align={"center"}>
+          <Link
+            href="/black-screen"
+          >
+            Black Screen
+          </Link>
+          <Link
+            href="/white-screen"
+          >
+            White Screen
+          </Link>
+          <Link
+            href="/do-not-write-on-this-page"
+          >
+            Do Not Write On This Page
+          </Link>
+        </Flex>
 
-          <nav className="flex items-center gap-2 sm:gap-3 lg:gap-4">
-            <LanguageSwitcher />
-            <ModeToggle />
-          </nav>
-        </div>
-      </div>
+        <Flex align="center" gap="4">
+          <LanguageSwitcher />
+          <ModeToggle />
+        </Flex>
+      </Flex>
     </header>
   );
 }

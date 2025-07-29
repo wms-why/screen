@@ -6,6 +6,7 @@ import AllFunction from "@/components/screen/Default";
 import { useTranslations } from "next-intl";
 import { Locales } from "@/i18n/config";
 import { Metadata } from "next";
+import { Box, Flex, Heading, Section, Text } from "@radix-ui/themes";
 const host = process.env.NEXT_PUBLIC_HOST;
 export default function HomePage({
   params,
@@ -21,41 +22,40 @@ export default function HomePage({
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
       {/* Header */}
-
       <Header />
       {/* Main Content */}
-      <main className="flex-1 w-full">
+      <Box >
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-r from-blue-500 to-purple-600 text-white">
-          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+        <Section className="bg-gradient-to-r from-blue-500 to-purple-600">
+          <Flex justify={"center"} align={"center"} direction={"column"}>
+            <Heading as="h1" size={"7"} >
               {t("heroTitle")}
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-              {t("heroSubtitle")}
-            </p>
+            </Heading>
+            <Box p={"4"} >
+              <Text size={"6"}> {t("heroSubtitle")}</Text>
+            </Box>
             <a
               className="bg-white text-blue-600 px-8 py-3 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors"
               href="#designTool"
             >
-              {t("getStarted")}
+              <Text size={"5"}> {t("getStarted")}</Text>
             </a>
-          </div>
-        </section>
+          </Flex>
+        </Section>
 
         {/* 工具栏 */}
-        <section
-          className=" mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6"
-          id="designTool"
-        >
-          <h2 className="text-3xl font-bold text-center mb-12">
-            {t("toolTitle")}
-          </h2>
-          <AllFunction></AllFunction>
-        </section>
+        <Section p="4"        >
+          <Flex justify={"between"} align={"center"} direction={"column"} gap={"2"}>
+            <Heading as="h2" size={"6"}>
+              {t("toolTitle")}
+            </Heading>
+            <AllFunction></AllFunction>
+          </Flex>
+
+        </Section>
 
         {/* Features Section */}
-        <section className="py-16 bg-gradient-to-br from-orange-50 to-amber-50">
+        <Section className="py-16 bg-gradient-to-br from-orange-50 to-amber-50">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center mb-12">
               {t("featuresTitle")}
@@ -75,10 +75,10 @@ export default function HomePage({
               </div>
             </div>
           </div>
-        </section>
+        </Section>
 
         {/* Testimonials Section */}
-        <section className="py-16 bg-gradient-to-br from-blue-50 to-purple-50">
+        <Section className="py-16 bg-gradient-to-br from-blue-50 to-purple-50">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8">
             <h2 className="text-3xl font-bold text-center mb-12">
               {t("testimonialsTitle")}
@@ -94,7 +94,7 @@ export default function HomePage({
               </div>
             </div>
           </div>
-        </section>
+        </Section>
 
         {/* CTA Section */}
         <section className="py-16 bg-blue-600 text-white">
@@ -132,7 +132,7 @@ export default function HomePage({
             </div>
           </div>
         </section>
-      </main>
+      </Box>
 
       {/* Footer */}
       <Footer></Footer>

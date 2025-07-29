@@ -3,14 +3,8 @@
 import { useEffect, useState } from "react";
 
 import { usePathname, useRouter } from "@/i18n/navigation";
-import { Button } from "./ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "./ui/dropdown-menu";
 import { Locales } from "@/i18n/config";
+import { Button, DropdownMenu } from "@radix-ui/themes";
 
 const LanguageSwitcher = () => {
   const router = useRouter();
@@ -55,30 +49,30 @@ const LanguageSwitcher = () => {
   };
 
   return (
-    <DropdownMenu dir={currentLanguage === "ar" ? "rtl" : "ltr"}>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="sm">
+    <DropdownMenu.Root dir={currentLanguage === "ar" ? "rtl" : "ltr"}>
+      <DropdownMenu.Trigger >
+        <Button variant="outline" size={"2"}>
           {languageLabels[currentLanguage as keyof typeof languageLabels]}
         </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => changeLanguage("en")}>
+      </DropdownMenu.Trigger>
+      <DropdownMenu.Content align="end">
+        <DropdownMenu.Item onClick={() => changeLanguage("en")}>
           English
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => changeLanguage("ar")}>
+        </DropdownMenu.Item>
+        <DropdownMenu.Item onClick={() => changeLanguage("ar")}>
           العربية
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => changeLanguage("zh")}>
+        </DropdownMenu.Item>
+        <DropdownMenu.Item onClick={() => changeLanguage("zh")}>
           中文
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => changeLanguage("es")}>
+        </DropdownMenu.Item>
+        <DropdownMenu.Item onClick={() => changeLanguage("es")}>
           Español
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => changeLanguage("jp")}>
+        </DropdownMenu.Item>
+        <DropdownMenu.Item onClick={() => changeLanguage("jp")}>
           日本語
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
+        </DropdownMenu.Item>
+      </DropdownMenu.Content>
+    </DropdownMenu.Root>
   );
 };
 

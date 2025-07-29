@@ -1,4 +1,5 @@
 "use client";
+import { Box, Section } from "@radix-ui/themes";
 import BackgroundSelector, { Background } from "../common/BackgroundSelector";
 import PreviewToolbar from "../common/PreviewToolbar";
 import TextEditor, { TextProp } from "../common/TextEditor";
@@ -16,16 +17,16 @@ export default function Page() {
   });
 
   return (
-    <div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div className="space-y-6">
+    <Box>
+      <Box className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <Box className="space-y-6">
           <BackgroundSelector
             background={background}
             setBackground={setBackground}
           />
           <TextEditor text={text} setText={setText} />
-        </div>
-        <div className="flex items-center justify-center">
+        </Box>
+        <Box className="flex items-center justify-center">
           <div
             className="w-full aspect-video flex items-center justify-center border rounded-lg"
             style={{
@@ -48,9 +49,9 @@ export default function Page() {
               </p>
             )}
           </div>
-        </div>
-      </div>
+        </Box>
+      </Box>
       <PreviewToolbar background={background} text={text} />
-    </div>
+    </Box>
   );
 }
